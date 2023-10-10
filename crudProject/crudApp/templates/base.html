@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+</head>
+<body>
+  <!--Header start-->
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href=""><img src="{% static 'img/Frame 1.png' %}" alt="nigga" width="40px" height="40px"></a>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="{% url 'homePage' %}" class="button is-primary is-outlined">Посты</a>
+                <a href="{% url 'addPost' %}" class="button is-info is-outlined">Добавить пост</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </nav>
+  <!--Header end-->
+    <!--Post start-->
+     <div class="container m-3">
+      <div class="columns">
+        <div class="column is-8">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="column is-4">
+          <h2 class="title is-2">Реклама</h2>
+          <article class="message">
+            <div class="message-header">
+              <p>Реклама</p>
+              <a href="#" class="delete" aria-label="delete"></a>
+            </div>
+            <div class="message-body">
+ <iframe width="100%" height="315" src="https://www.youtube.com/embed/scGjpv_uoIk?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </article>
+        </div>
+      </div>
+     </div>
+    <!--Post end-->
+     <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

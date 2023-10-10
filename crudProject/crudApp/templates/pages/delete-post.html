@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Удалить пост{% endblock %}
+
+{% block content %}
+ <form method="post">
+     <div class="card">
+         <div class="card-content">
+             <h2 class="title is-2">Удалить пост?</h2>
+             {% csrf_token %}
+             <button class=" button is-danger">Да</button>
+                <a href="{% url 'homePage' %}" class="button is-info">Нет</a>
+         </div>
+     </div>
+ </form>
+{% endblock %}

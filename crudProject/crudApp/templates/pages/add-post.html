@@ -1,0 +1,23 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Добавить пост{% endblock %}
+
+{% block content %}
+<style>
+    #id_title, #id_content {
+    width: 100%;
+    border: 1px solid #363636;
+    padding: 10px;
+    }
+</style>
+ <form method="post">
+     <div class="card">
+         <div class="card-content">
+             <h2 class="title is-2">Добавить пост</h2>
+             {% csrf_token %}
+             {{ form|crispy }}
+             <button class="mt-3 button is-primary">Добавить</button>
+         </div>
+     </div>
+ </form>
+{% endblock %}
